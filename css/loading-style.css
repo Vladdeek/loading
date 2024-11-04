@@ -1,0 +1,21 @@
+:root {
+	/* Определение переменных с цветом */
+	--color1: rgba(0, 0, 0, 1);
+	--color2: rgba(138, 138, 138, 1);
+}
+body {
+	height: 100vh;
+}
+.loading-text {
+	font-size: 2rem;
+	background: linear-gradient(
+		90deg,
+		var(--color1) 0%,
+		var(--color2) 50%,
+		var(--color1) 100%
+	);
+	background-clip: text; /* устанавливает, чтобы фон применялся только к тексту (стандартное свойство без префикса для современных браузеров.) */
+	-webkit-background-clip: text; /* Префикс для WebKit-браузеров (Chrome, Safari, Opera) */
+	-moz-background-clip: text; /* Префикс для старых версий Firefox */
+	-webkit-text-fill-color: transparent; /* делает сам текст прозрачным, чтобы был виден градиент фона. */
+}

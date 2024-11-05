@@ -45,7 +45,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.25); /* Полупрозрачный черный фон */
+	background-color: rgba(0, 0, 0, 0); /* Полупрозрачный черный фон */
 	backdrop-filter: blur(2.5px); /* Размытие фона */
 	z-index: 10; /* z-index для размытия */
 }

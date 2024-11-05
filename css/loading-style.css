@@ -4,12 +4,13 @@
 	--color2: rgba(138, 138, 138, 1);
 }
 
+/* для тестирования размытия фона
 body {
-	/* для тестирования размытия фона *
 	background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
 	background-size: cover;
-	background-position: center;*/
+	background-position: center;
 }
+*/
 
 .loading-text {
 	position: relative;

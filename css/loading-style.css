@@ -3,10 +3,17 @@
 	--color1: rgba(0, 0, 0, 1);
 	--color2: rgba(138, 138, 138, 1);
 }
+
 body {
-	height: 100vh;
+	/* для тестирования размытия фона *
+	background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+	background-size: cover;
+	background-position: center;*/
 }
+
 .loading-text {
+	position: relative;
+	z-index: 11;
 	font-size: 2rem;
 	background: linear-gradient(
 		90deg,
@@ -14,8 +21,30 @@ body {
 		var(--color2) 50%,
 		var(--color1) 100%
 	);
-	background-clip: text; /* устанавливает, чтобы фон применялся только к тексту (стандартное свойство без префикса для современных браузеров.) */
-	-webkit-background-clip: text; /* Префикс для WebKit-браузеров (Chrome, Safari, Opera) */
-	-moz-background-clip: text; /* Префикс для старых версий Firefox */
-	-webkit-text-fill-color: transparent; /* делает сам текст прозрачным, чтобы был виден градиент фона. */
+	background-size: 200% 100%; /* Увеличение размера градиента для анимации */
+	animation: moveColor 1.5s infinite; /* Анимация движения цвета */
+	background-clip: text; /* Обрезка фона по тексту */
+	-webkit-background-clip: text; /* Поддержка для браузеров на основе WebKit */
+	-moz-background-clip: text; /* Поддержка для Firefox */
+	-webkit-text-fill-color: transparent; /* Применение прозрачного цвета к тексту */
+	filter: invert(0);
+}
+
+@keyframes moveColor {
+	0% {
+		background-position: 200% 0; /* Начальная позиция градиента */
+	}
+	100% {
+		background-position: 0 200%; /* Конечная позиция градиента */
+	}
+}
+.blur-loading-screen {
+	position: fixed; /* Фиксированное позиционирование для заполнения экрана */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25); /* Полупрозрачный черный фон */
+	backdrop-filter: blur(2.5px); /* Размытие фона */
+	z-index: 10; /* z-index для размытия */
 }
